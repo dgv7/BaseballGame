@@ -10,16 +10,12 @@ class BaseballGame {
         print("< 게임을 시작합니다 >")
         print("숫자를 입력하세요")
         while true {
-            guard let input = readLine(), let guessedNumber = Int(input) else {
-                print("올바른 값이 아닙니다")
-                continue
-            }
-            guard guessedNumber > 100 else {
-                print("100보다 큰 수를 입력해야 합니다.")
-                continue
-            }
-            guard guessedNumber < 1000 else {
-                print("1000보다 작은 수를 입력해야 합니다.")
+            guard let input = readLine(), //입력받기
+                  let guessedNumber = Int(input), //숫자로 변환
+                  input.count == 3, //3자리 수 입력
+                  hasUniqueDigits(input) //각 자리가 다른 숫자인지 확인
+            else {
+                print("각 자리수가 다른 세자리 숫자만 입력 가능합니다.\n")
                 continue
             }
             print("입력한 숫자: \(guessedNumber)")
@@ -27,7 +23,17 @@ class BaseballGame {
             
             let result : (strike: Int, ball: Int) = matchNumber(guessedNumber,randomNumber)
             
-            print("\(result.strike)스트라이크 \(result.ball)볼")
+            if(result.strike==0 && result.ball==0){
+                print("Nothing")
+            } else if(result.ball==0){
+                print("\(result.strike)스트라이크")
+            } else if(result.strike==0){
+                print("\(result.ball)볼")
+            } else {
+                print("\(result.strike)스트라이크 \(result.ball)볼")
+            }
+            
+            print("")
             
             if(guessedNumber == randomNumber){
                 print("정답입니다!")
@@ -44,17 +50,9 @@ class BaseballGame {
         var ball:Int = 0
         
         for i in 0...2 {
-            //한 글자를 저장
-            //            let guessedDigit = guessedNumberString[guessedNumberString.index(guessedNumberString.startIndex, offsetBy: i)]
-            //            let randomDigit = randomNumberString[randomNumberString.index(randomNumberString.startIndex, offsetBy: i)]
             //배열로 전체를 저장
             let guessedDigit = Array(guessedNumberString)
             let randomDigit = Array(randomNumberString)
-            
-            print(guessedDigit[i])
-            print(randomDigit[i])
-            print(guessedDigit[i]==randomDigit[i])
-            print(randomNumberString.contains(guessedDigit[i]))
             
             if(guessedDigit[i] == randomDigit[i]) {
                 strike += 1
@@ -64,5 +62,14 @@ class BaseballGame {
         }
         
         return (strike, ball)
+    }
+    
+    func hasUniqueDigits(_ input: String) -> Bool {
+        let inputArray = Array(input)
+        if(inputArray[0]=="0"){ //0으로 시작하는 숫자 입력 방지
+            return false
+        }
+        let uniqueDigits = Set(inputArray)
+        return uniqueDigits.count == inputArray.count
     }
 }

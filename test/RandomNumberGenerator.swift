@@ -1,5 +1,5 @@
 class RandomNumberGenerator {
-    func generateUniqueThreeDigitNumber() -> Int{
+    func generateUniqueThreeDigitNumber() -> Int {
         var numberSet: Set<Int> = []
         while numberSet.count < 3 {
             numberSet.insert(Int.random(in: 0...9))
