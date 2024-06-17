@@ -1,10 +1,10 @@
 class BaseballGame {
     var randomNumber: Int
     let recordManager = RecordManager()
+    let randomNumberGenerator = RandomNumberGenerator()
     
     init() {
-        let randomNumberGenerator = RandomNumberGenerator()
-        self.randomNumber = randomNumberGenerator.generateUniqueThreeDigitNumber()
+        randomNumber = randomNumberGenerator.generateUniqueThreeDigitNumber()
     }
     
     func intro() {
@@ -66,11 +66,13 @@ class BaseballGame {
             
             if(guessedNumber == randomNumber){
                 print("정답입니다!")
+                randomNumber = randomNumberGenerator.generateUniqueThreeDigitNumber()
                 recordManager.add(trialCount: trialCount)
                 break
             }
         }
     }
+    
     func matchNumber(_ guessedNumber:Int ,_ randomNumber:Int) -> (strike: Int, ball: Int) {
         let guessedNumberString = String(guessedNumber)
         let randomNumberString = String(randomNumber)
