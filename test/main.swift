@@ -1,2 +1,2 @@
 let game = BaseballGame()
-game.start()
+game.intro()

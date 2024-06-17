@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB06C0FB2C1FAD4A0075B203 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06C0FA2C1FAD4A0075B203 /* RecordManager.swift */; };
 		DB8DB6ED2C1C755C00D01935 /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8DB6EC2C1C755C00D01935 /* RandomNumberGenerator.swift */; };
 		DBBE779C2C1B15B50024A225 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBE779B2C1B15B50024A225 /* main.swift */; };
 		DBF50C052C1C12F0005CBA07 /* BaseBallGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF50C042C1C12F0005CBA07 /* BaseBallGame.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DB06C0FA2C1FAD4A0075B203 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		DB8DB6EC2C1C755C00D01935 /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
 		DBBE77982C1B15B50024A225 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBE779B2C1B15B50024A225 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				DBBE779B2C1B15B50024A225 /* main.swift */,
+				DB06C0FA2C1FAD4A0075B203 /* RecordManager.swift */,
 				DBF50C042C1C12F0005CBA07 /* BaseBallGame.swift */,
 				DB8DB6EC2C1C755C00D01935 /* RandomNumberGenerator.swift */,
 			);
@@ -126,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB06C0FB2C1FAD4A0075B203 /* RecordManager.swift in Sources */,
 				DBBE779C2C1B15B50024A225 /* main.swift in Sources */,
 				DBF50C052C1C12F0005CBA07 /* BaseBallGame.swift in Sources */,
 				DB8DB6ED2C1C755C00D01935 /* RandomNumberGenerator.swift in Sources */,
